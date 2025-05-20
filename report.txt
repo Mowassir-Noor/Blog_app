@@ -1,0 +1,151 @@
+# Windows Forms Blog Application - Project Report
+Date: May 20, 2025
+
+## Project Overview
+This Windows Forms application provides a complete blogging system with user authentication, blog post management, and administrative capabilities. The application was built using C# and Windows Forms with a SQLite database for data persistence.
+
+## Features Implemented
+
+### 1. User Authentication System
+- Secure login with password hashing (SHA-256)
+- User registration with validation
+- Session management
+- Role-based permissions (admin vs. regular users)
+- Logout functionality
+
+### 2. Blog Post Management
+- Create new blog posts with title, content, and category
+- View existing posts with details
+- Edit posts (with permission checking)
+- Delete posts (with permission checking)
+- Filter posts by category
+- Search functionality for posts
+
+### 3. User Management (Admin Only)
+- View all user accounts
+- Add new user accounts
+- Edit existing user accounts
+- Delete user accounts
+- Assign admin privileges
+- Protection for default admin account
+
+### 4. Modern UI
+- Clean, consistent design across all forms
+- Color scheme with blue accent color (#007ACC)
+- Responsive layout with proper sizing
+- Status bar displaying current user
+- Menu system for navigation
+- Styled buttons and controls
+
+## Architecture and Implementation
+
+### Data Layer
+- SQLite database with two main tables:
+  - BlogPosts: Stores all blog post data
+  - Users: Stores user account information
+- BlogRepository class handles all database operations
+- Automatic database initialization with default admin account
+
+### Models
+- BlogPost: Represents a blog post with properties like title, content, etc.
+- User: Represents a user account with authentication capabilities
+
+### Forms
+- LoginForm: Handles user authentication
+- RegisterForm: Allows new user registration
+- MainForm: Main interface displaying blog posts with filtering
+- EditPostForm: Interface for creating/editing posts
+- ViewPostForm: Displays post details
+- UserManagementForm: Admin interface for user management
+- UserEditForm: Interface for adding/editing users
+
+### Security Features
+- Password hashing for secure storage
+- Permission checking before edit/delete operations
+- User role management
+- Input validation to prevent errors
+
+## Challenges and Solutions
+
+### 1. Database Initialization
+- Challenge: The application was failing to find the Users table during new user registration
+- Solution: Added table existence checking and automatic creation of missing tables
+
+### 2. User Authentication
+- Challenge: Needed secure password storage and validation
+- Solution: Implemented SHA-256 hashing for passwords and proper authentication logic
+
+### 3. User Session Management
+- Challenge: Maintaining user state across multiple forms
+- Solution: Created a static CurrentUser property in Program class accessible application-wide
+
+### 4. Permission-Based Actions
+- Challenge: Limiting edit/delete operations based on user permissions
+- Solution: Added checks to verify user ownership or admin status before allowing actions
+
+## Technical Details
+
+### Technologies Used
+- C# 9.0
+- .NET 9.0
+- Windows Forms
+- System.Data.SQLite
+- SHA-256 encryption
+
+### Database Schema
+1. BlogPosts Table:
+   - Id (INTEGER PRIMARY KEY)
+   - Title (TEXT)
+   - Content (TEXT)
+   - CreatedDate (TEXT)
+   - ModifiedDate (TEXT)
+   - Author (TEXT)
+   - Category (TEXT)
+   - IsPublished (INTEGER)
+   - UserId (INTEGER)
+
+2. Users Table:
+   - Id (INTEGER PRIMARY KEY)
+   - Username (TEXT UNIQUE)
+   - PasswordHash (TEXT)
+   - Email (TEXT)
+   - DisplayName (TEXT)
+   - IsAdmin (INTEGER)
+   - CreatedDate (TEXT)
+   - LastLoginDate (TEXT)
+
+## Usage Instructions
+
+### Running the Application
+1. Launch the BlogApp.exe application
+2. Login with default admin credentials:
+   - Username: admin
+   - Password: admin123
+3. Or register a new user account
+
+### Managing Blog Posts
+- View all posts on the main screen
+- Use the filter dropdown to view posts by category
+- Use the search box to find posts by keyword
+- Click "New Post" to create a new blog post
+- Select a post and click "Edit" or "Delete" to modify (if you have permission)
+- Double-click any post to view its details
+
+### Managing Users (Admin Only)
+- Click "Admin > Manage Users" in the menu
+- View all registered users
+- Click "Add New User" to create new accounts
+- Select a user and click "Edit" to modify their details
+- Select a user and click "Delete" to remove them
+
+## Future Enhancements
+1. Rich text editor for blog posts
+2. Image upload capabilities
+3. Comment system for blog posts
+4. Blog categories management
+5. Export/import functionality
+6. User profile pages
+7. Password reset functionality
+
+## Conclusion
+The Windows Forms Blog Application demonstrates a complete system for managing blog posts with proper user authentication and authorization. The application showcases proper architecture design with separation of concerns, secure user management, and a modern user interface.

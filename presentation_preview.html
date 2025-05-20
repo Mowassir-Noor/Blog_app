@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows Forms Blog Application - Presentation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        .slide {
+            width: 800px;
+            height: 600px;
+            margin: 20px auto;
+            padding: 40px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            page-break-after: always;
+            position: relative;
+            overflow: hidden;
+        }
+        .slide-number {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        h1 {
+            color: #007ACC;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+        h2 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+        h3 {
+            color: #007ACC;
+            font-size: 24px;
+        }
+        ul {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+        li {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .subtitle {
+            font-size: 24px;
+            color: #555;
+            margin-bottom: 40px;
+        }
+        .date {
+            margin-top: 40px;
+            font-size: 18px;
+            color: #666;
+        }
+        .image-placeholder {
+            width: 60%;
+            height: 300px;
+            margin: 20px auto;
+            background-color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #777;
+            border: 1px solid #ccc;
+        }
+        .columns {
+            display: flex;
+            margin-top: 30px;
+        }
+        .column {
+            flex: 1;
+            padding: 0 15px;
+        }
+        .blue {
+            color: #007ACC;
+        }
+        .thanks {
+            text-align: center;
+            margin-top: 180px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1 -->
+    <div class="slide">
+        <h1>Windows Forms Blog Application</h1>
+        <p class="subtitle">A Complete Blogging Solution with User Authentication</p>
+        <div class="image-placeholder">[Main application screenshot]</div>
+        <p class="date">May 20, 2025</p>
+        <div class="slide-number">1</div>
+    </div>
+
+    <!-- Slide 2 -->
+    <div class="slide">
+        <h1>Project Overview</h1>
+        <ul>
+            <li>Full-featured Windows Forms blogging application</li>
+            <li>Built with C# and .NET 9.0</li>
+            <li>SQLite database backend for data persistence</li>
+            <li>Modern UI with intuitive controls</li>
+            <li>Complete user authentication system</li>
+            <li>Permission-based content management</li>
+        </ul>
+        <div class="slide-number">2</div>
+    </div>
+
+    <!-- Slide 3 -->
+    <div class="slide">
+        <h1>Key Features</h1>
+        <ul>
+            <li><span class="blue">User Authentication System</span>
+                <ul>
+                    <li>Secure login/registration with SHA-256 hashing</li>
+                    <li>Role-based permissions (admin vs. regular users)</li>
+                </ul>
+            </li>
+            <li><span class="blue">Blog Post Management</span>
+                <ul>
+                    <li>Create, view, edit, and delete posts</li>
+                    <li>Category filtering and search functionality</li>
+                </ul>
+            </li>
+            <li><span class="blue">User Management</span>
+                <ul>
+                    <li>Admin panel for user administration</li>
+                    <li>Create, edit, and delete user accounts</li>
+                </ul>
+            </li>
+            <li><span class="blue">Modern User Interface</span>
+                <ul>
+                    <li>Consistent styling across all forms</li>
+                    <li>Intuitive navigation system</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="slide-number">3</div>
+    </div>
+
+    <!-- Slide 4 -->
+    <div class="slide">
+        <h1>User Authentication</h1>
+        <div class="image-placeholder">[Login and Registration Forms]</div>
+        <ul>
+            <li>Secure login with username and password</li>
+            <li>New user registration with validation</li>
+            <li>Password hashing for security</li>
+            <li>Session management to maintain user state</li>
+            <li>Different access levels (admin vs. regular users)</li>
+        </ul>
+        <div class="slide-number">4</div>
+    </div>
+
+    <!-- Slide 5 -->
+    <div class="slide">
+        <h1>Blog Post Management</h1>
+        <div class="image-placeholder">[Main form with post listing and Edit Post form]</div>
+        <ul>
+            <li>View all posts with filtering options</li>
+            <li>Create new posts with title, content, and category</li>
+            <li>Edit existing posts (with permission checking)</li>
+            <li>Delete posts (with permission checking)</li>
+            <li>Search functionality to find specific content</li>
+        </ul>
+        <div class="slide-number">5</div>
+    </div>
+
+    <!-- Slide 6 -->
+    <div class="slide">
+        <h1>User Management</h1>
+        <div class="image-placeholder">[User Management Form]</div>
+        <ul>
+            <li><strong>Admin-only functionality</strong></li>
+            <li>View all registered users in the system</li>
+            <li>Add new users with specific permissions</li>
+            <li>Edit existing user details and roles</li>
+            <li>Delete users with safeguards for the admin account</li>
+        </ul>
+        <div class="slide-number">6</div>
+    </div>
+
+    <!-- Slide 7 -->
+    <div class="slide">
+        <h1>Technical Architecture</h1>
+        <h3>Three-Layer Architecture:</h3>
+        <ol>
+            <li><strong>Data Layer</strong>: BlogRepository with SQLite</li>
+            <li><strong>Model Layer</strong>: BlogPost and User classes</li>
+            <li><strong>UI Layer</strong>: Windows Forms interfaces</li>
+        </ol>
+
+        <h3>Security Measures:</h3>
+        <ul>
+            <li>Password hashing using SHA-256</li>
+            <li>Permission validation for operations</li>
+            <li>Input validation to prevent errors</li>
+        </ul>
+        <div class="slide-number">7</div>
+    </div>
+
+    <!-- Slide 8 -->
+    <div class="slide">
+        <h1>Database Design</h1>
+        <div class="image-placeholder">[Database Schema Diagram]</div>
+        <div class="columns">
+            <div class="column">
+                <h3>BlogPosts Table</h3>
+                <ul>
+                    <li>Essential fields (Id, Title, Content, etc.)</li>
+                    <li>User association through UserId</li>
+                    <li>Metadata (CreatedDate, ModifiedDate)</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h3>Users Table</h3>
+                <ul>
+                    <li>User credentials and information</li>
+                    <li>Role designation (IsAdmin flag)</li>
+                    <li>Login tracking</li>
+                </ul>
+            </div>
+        </div>
+        <div class="slide-number">8</div>
+    </div>
+
+    <!-- Slide 9 -->
+    <div class="slide">
+        <h1>Key Challenges & Solutions</h1>
+        <ul>
+            <li>
+                <strong class="blue">Challenge 1:</strong> Database initialization and upgrades
+                <ul>
+                    <li><strong>Solution:</strong> Table existence checking with automatic creation</li>
+                </ul>
+            </li>
+            <li>
+                <strong class="blue">Challenge 2:</strong> User session management
+                <ul>
+                    <li><strong>Solution:</strong> Static CurrentUser in Program class</li>
+                </ul>
+            </li>
+            <li>
+                <strong class="blue">Challenge 3:</strong> Permission-based actions
+                <ul>
+                    <li><strong>Solution:</strong> User ownership and admin role verification</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="slide-number">9</div>
+    </div>
+
+    <!-- Slide 10 -->
+    <div class="slide">
+        <h1>Demo</h1>
+        <div class="image-placeholder">[Application Workflow Screenshots]</div>
+        <ul>
+            <li>Login with admin account</li>
+            <li>Create a blog post</li>
+            <li>View and edit posts</li>
+            <li>Filter and search posts</li>
+            <li>Manage user accounts (admin only)</li>
+        </ul>
+        <div class="slide-number">10</div>
+    </div>
+
+    <!-- Slide 11 -->
+    <div class="slide">
+        <h1>Future Enhancements</h1>
+        <ul>
+            <li>Rich text editor for content formatting</li>
+            <li>Image upload capabilities</li>
+            <li>Comment system for reader engagement</li>
+            <li>Blog categories management</li>
+            <li>Export/import functionality</li>
+            <li>User profile pages</li>
+            <li>Password reset functionality</li>
+        </ul>
+        <div class="slide-number">11</div>
+    </div>
+
+    <!-- Slide 12 -->
+    <div class="slide">
+        <h1 class="thanks">Thank You</h1>
+        <div class="thanks">
+            <h2>Windows Forms Blog Application</h2>
+            <p>A complete blogging solution with security and usability in mind</p>
+            <p>Questions and feedback welcome</p>
+        </div>
+        <div class="slide-number">12</div>
+    </div>
+</body>
+</html>
